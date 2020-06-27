@@ -1,6 +1,5 @@
-## Put comments here that give an overall description of what your
-## functions do
-## Write a short comment describing this function
+## creates the special matrix, gets the data, set and get the inverse.
+
 makeCacheMatrix<-function(x = matrix()) {
   i <- NULL
   set <- function(y) {
@@ -14,7 +13,7 @@ makeCacheMatrix<-function(x = matrix()) {
        setsolve = setsolve,
        getsolve = getsolve)
 }
-## Write a short comment describing this function
+## calculates the inverse of the special matrix stored in cache by the previous function
 cacheSolve<-function(x, ...) {
   i <- x$getsolve()
   if(!is.null(i)) {
@@ -25,5 +24,5 @@ cacheSolve<-function(x, ...) {
   i <- solve(data, ...)
   x$setsolve(i)
   i
-  ## Return a matrix that is the inverse of 'x'
+
 }
